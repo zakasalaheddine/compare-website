@@ -1,5 +1,6 @@
 import { dehydrate, QueryClient } from '@tanstack/react-query'
 import Head from 'next/head'
+import Navbar from '../components/navbar'
 import { getNetworkData } from '../queries/network'
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
       <main>
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
       </main>
