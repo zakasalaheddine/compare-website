@@ -1,6 +1,10 @@
+import { dehydrate, QueryClient } from '@tanstack/react-query'
 import Head from 'next/head'
+import { getNetworkData } from '../queries/network'
 
 export default function Home() {
+  // const { } = useQuery(['network'], getNetworkData)
+
   return (
     <div>
       <Head>
@@ -14,4 +18,14 @@ export default function Home() {
       </main>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const queryClient = new QueryClient()
+  await queryClient.prefetchQuery(['network'], getNetworkData)
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient)
+    }
+  }
 }
