@@ -1,11 +1,16 @@
-import { dehydrate, QueryClient } from '@tanstack/react-query'
+import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query'
 import Head from 'next/head'
+import BullEye from '../components/bullsEye'
 import Navbar from '../components/navbar'
 import { getNetworkData } from '../queries/network'
 
 export default function Home() {
-  // const { } = useQuery(['network'], getNetworkData)
+  const { data } = useQuery(['network'], getNetworkData)
 
+  if (!data) return <div>Nothing Found</div>
+  const {
+    homepage: { headline, sections }
+  } = data
   return (
     <div>
       <Head>
@@ -15,8 +20,17 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      <main>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <main className="bg-white-text h-screen">
+        <h1 className="text-3xl font-bold underline">{headline}</h1>
+        {sections.map(({ collection, item }, idx) => {
+          switch (collection) {
+            case 'bullsEye':
+              return <BullEye elements={item} key={`section__${idx}`} />
+
+            default:
+              break
+          }
+        })}
       </main>
     </div>
   )
