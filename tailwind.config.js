@@ -15,7 +15,7 @@ module.exports = {
       'bg-dark': '#454545',
       'white-text': '#F5F5F5'
     },
-    extend: {}
+    extend: { padding: { 'fluid-video': '56.25%' } }
   },
   plugins: []
 }

@@ -16,7 +16,7 @@ export default function BullEyeNavItem({ icon, label, isActive, onChange }) {
   const iconSrc = `${BackendURL}/assets/${icon.id}/${icon.filename_download}`
   return (
     <div
-      className={`flex flex-col items-center justify-between w-[140px] cursor-pointer ease-in duration-200 relative ${containerClassName(
+      className={`flex flex-col items-center justify-between w-[140px] lg:w-[180px] cursor-pointer ease-in duration-200 relative ${containerClassName(
         isActive
       )}`}
       onClick={onChange}
@@ -35,7 +35,7 @@ export default function BullEyeNavItem({ icon, label, isActive, onChange }) {
         />
       </div>
       <h3
-        className={`text-[12px] font-semibold py-4 ease-in duration-200 ${labelClassName(
+        className={`text-[12px] lg:text-[16px] font-semibold py-4 ease-in duration-200 ${labelClassName(
           isActive
         )}`}
       >

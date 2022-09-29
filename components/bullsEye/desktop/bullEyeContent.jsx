@@ -14,7 +14,7 @@ export default function BullEyeContent({
 }) {
   const thumbnailSrc = `${BackendURL}/assets/${thumbnail.id}/${thumbnail.filename_download}`
   return (
-    <div className="flex mt-12 md:mx-2 xl:mx-auto xl:w-3/5 items-end">
+    <div className="flex mt-12 h-[312px] md:mx-2 xl:mx-auto xl:w-3/5 items-end">
       <div className="flex flex-col items-start w-3/5">
         <p className="text-sm text-bg-light mb-5">{name}</p>
         <h2 className="text-2xl text-secondary font-black mb-5">{title}</h2>
