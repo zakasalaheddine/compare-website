@@ -4,6 +4,7 @@ import BullEye from '../components/bullsEye'
 import Headline from '../components/headline'
 import HeadlineDescriptionVideo from '../components/headlineDescriptionVideo'
 import Navbar from '../components/navbar'
+import QuizCallSection from '../components/quizCall'
 import { getNetworkData } from '../queries/network'
 
 export default function Home() {
@@ -28,14 +29,25 @@ export default function Home() {
         {sections.map(({ collection, item }, idx) => {
           switch (collection) {
             case 'bullsEye':
-              return <BullEye elements={item} key={`section__${idx}`} />
+              return <BullEye elements={item} key={`bullsEye__${idx}`} />
             case 'headlineDescriptionVideo':
               return (
                 <HeadlineDescriptionVideo
                   headline={item.headline}
                   description={item.description}
                   video={item.videoUrl}
-                  key={`section__${idx}`}
+                  key={`headlineDescriptionVideo__${idx}`}
+                />
+              )
+            case 'quizCallSection':
+              return (
+                <QuizCallSection
+                  ctaText={item.ctaText}
+                  ctaTarget={item.ctaUrl}
+                  description={item.description}
+                  headline={item.headline}
+                  image={item.image}
+                  key={`quizCallSection__${idx}`}
                 />
               )
             default:
