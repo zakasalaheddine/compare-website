@@ -5,6 +5,7 @@ import Headline from '../components/headline'
 import HeadlineDescriptionVideo from '../components/headlineDescriptionVideo'
 import Navbar from '../components/navbar'
 import QuizCallSection from '../components/quizCall'
+import ToolsSection from '../components/toolsSection'
 import { getNetworkData } from '../queries/network'
 
 export default function Home() {
@@ -48,6 +49,14 @@ export default function Home() {
                   headline={item.headline}
                   image={item.image}
                   key={`quizCallSection__${idx}`}
+                />
+              )
+            case 'tools':
+              return (
+                <ToolsSection
+                  tools={item.tools}
+                  headline={item.headline}
+                  key={`tools__${idx}`}
                 />
               )
             default:

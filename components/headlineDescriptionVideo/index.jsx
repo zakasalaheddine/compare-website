@@ -7,7 +7,7 @@ export default function HeadlineDescriptionVideo({
 }) {
   return (
     <div className="bg-bgWhite px-10 py-12">
-      <h2 className="text-center font-black text-3xl mb-10">{headline}</h2>
+      <h3 className="text-center font-black text-3xl mb-10">{headline}</h3>
       <div className="font-normal text-base mb-10 max-w-4xl mx-auto">
         <ReactMarkdown>{description}</ReactMarkdown>
       </div>
