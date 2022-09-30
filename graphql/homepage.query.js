@@ -6,6 +6,13 @@ query networkData{
 		logo{
 			filename_download
 		}
+		footer{
+			id
+			Pages_Title
+			pages
+			Socials_Title
+			socials
+		}
 		homepage{
 			name
 			headline

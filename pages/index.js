@@ -1,6 +1,7 @@
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query'
 import Head from 'next/head'
 import BullEye from '../components/bullsEye'
+import Footer from '../components/footer'
 import Headline from '../components/headline'
 import HeadlineDescriptionVideo from '../components/headlineDescriptionVideo'
 import Navbar from '../components/navbar'
@@ -13,7 +14,8 @@ export default function Home() {
 
   if (!data) return <div>Nothing Found</div>
   const {
-    homepage: { headline, sections }
+    homepage: { headline, sections },
+    footer: { Pages_Title, pages, Socials_Title, socials }
   } = data
   console.log({ data })
   return (
@@ -25,7 +27,7 @@ export default function Home() {
       </Head>
 
       <Navbar />
-      <main className="bg-white-text h-screen">
+      <main className="bg-white-text">
         <Headline content={headline} />
         {sections.map(({ collection, item }, idx) => {
           switch (collection) {
@@ -64,6 +66,7 @@ export default function Home() {
           }
         })}
       </main>
+      <Footer pages={pages} socialMedia={socials} />
     </div>
   )
 }
