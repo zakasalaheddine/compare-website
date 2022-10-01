@@ -1,8 +1,8 @@
 import { pageSection } from './fragments/pageSection.fragment'
 
-export const queryHomePage = `
+export const querySinglePage = `
 ${pageSection}
-query networkData {
+query getSinglePage($slug: String) {
 	network {
 		name
 		url
@@ -13,20 +13,13 @@ query networkData {
 		}
 		pages {
 			id
-			page_id {
+			page_id(filter: { slug: { _eq: $slug } }) {
 				slug
 				headline
 				sections {
 					...pageSection
 				}
 				content
-			}
-		}
-		homepage {
-			name
-			headline
-			sections {
-				...pageSection
 			}
 		}
 		footer {

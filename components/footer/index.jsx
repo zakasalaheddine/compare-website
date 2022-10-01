@@ -17,13 +17,18 @@ const getIconForType = (type) => {
   }
 }
 
-export default function Footer({ pages = [], socialMedia = [] }) {
+export default function Footer({
+  pagesTitle = '',
+  pages = [],
+  socialTitle = '',
+  socialMedia = []
+}) {
   return (
     <footer className="bg-secondary py-16">
       <div className="xl:w-3/5 mx-2 lg:mx-auto flex justify-between flex-col md:flex-row">
         <div className="flex-1 mx-3 md:mx-0 mb-5">
           <h3 className="font-black text-lg text-bgWhite mb-10">
-            Legals & Ressources
+            {pagesTitle}
           </h3>
           <div className="flex md:items-center justify-between mr-10 flex-col md:flex-row">
             {pages.map(({ name, target }, idx) => (
@@ -34,7 +39,9 @@ export default function Footer({ pages = [], socialMedia = [] }) {
           </div>
         </div>
         <div className="mx-3 md:mx-0">
-          <h3 className="font-black text-lg text-bgWhite mb-8">Follow us</h3>
+          <h3 className="font-black text-lg text-bgWhite mb-8">
+            {socialTitle}
+          </h3>
           <div className="flex items-center  md:justify-between">
             {socialMedia.map(({ type, target }, idx) => (
               <a
