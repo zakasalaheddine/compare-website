@@ -1,70 +1,37 @@
+import { pageSection } from './fragments/pageSection.fragment'
+
 export const queryHomePage = `
-query networkData{
-	network{
+${pageSection}
+query networkData {
+	network {
 		name
 		url
-		logo{
+		logo {
 			filename_download
 		}
-		footer{
+		pages {
+			id
+			page_id {
+				headline
+				sections {
+					...pageSection
+				}
+				content
+			}
+		}
+		homepage {
+			name
+			headline
+			sections {
+				...pageSection
+			}
+		}
+		footer {
 			id
 			Pages_Title
 			pages
 			Socials_Title
 			socials
-		}
-		homepage{
-			name
-			headline
-			sections_func{
-				count
-			}
-			sections{
-				id
-				collection
-				item{
-					... on bullsEye{
-						id
-						name
-						items{
-							bullsEyeItem_id{
-								name
-								icon{
-									id
-									filename_download
-								}
-								title
-								ctaText
-								ctaTarget
-								description
-								thumbnail{
-									id
-									filename_download
-								}
-							}
-						}
-					}
-					... on headlineDescriptionVideo{
-						headline
-						description
-						videoUrl
-					}
-					... on quizCallSection{
-						headline
-						description
-						ctaUrl
-						ctaText
-						image{
-							id
-							filename_download
-						}
-					}
-					... on tools {
-						headline
-						tools
-					}
-				}
-			}
 		}
 	}
 }
