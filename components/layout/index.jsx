@@ -5,38 +5,20 @@ import Navbar from '../navbar'
 import PageComponent from '../page'
 
 export default function Layout({
-  page,
-  footer,
-  isHome = true,
-  disclosureTitle,
-  disclosureContent
+  footerItems,
+  navbarItems,
+  socials,
+  children
 }) {
-  const { Pages_Title, pages, Socials_Title, socials } = footer
+  // const { Pages_Title, pages, Socials_Title, socials } = footer
   return (
     <>
-      <Navbar />
-
-      {!isHome && (
-        <div className="container flex justify-between items-center mx-auto py-8">
-          <div>
-            <Link href="/">
-              <a className="text-secondary-light underline">Home</a>
-            </Link>{' '}
-            {'>>'} {page.headline}
-          </div>
-          <div className="text-secondary-light underline cursor-pointer">
-            {disclosureTitle}
-          </div>
-        </div>
-      )}
-      <div className="absolute hidden">
-        <MarkdownContent content={disclosureContent} />
-      </div>
-      <PageComponent page={page} isHomePage={isHome} />
+      <Navbar items={navbarItems} />
+      {children}
       <Footer
-        pagesTitle={Pages_Title}
-        socialTitle={Socials_Title}
-        pages={pages}
+        pagesTitle="روابط"
+        socialTitle="تابعنا"
+        pages={footerItems}
         socialMedia={socials}
       />
     </>

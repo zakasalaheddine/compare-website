@@ -1,14 +1,16 @@
 import NavbarItem from './item'
 
-export default function NavbarItems({ openMobileNavbar, show = false }) {
+export default function NavbarItems({
+  openMobileNavbar,
+  show = false,
+  items = []
+}) {
   return (
     <nav className="text-white-text font-semibold">
       <ul className="hidden lg:flex">
-        <NavbarItem href="/" label="Platforms" />
-        <NavbarItem href="/" label="Amazon" />
-        <NavbarItem href="/" label="POD" />
-        <NavbarItem href="/" label="Reviews" />
-        <NavbarItem href="/" label="Ressources" />
+        {items.map(({ label, target }, idx) => (
+          <NavbarItem key={`navbar_item_${idx}`} href={target} label={label} />
+        ))}
       </ul>
       <button
         className="navbar-burger flex lg:hidden items-center p-3"
@@ -23,9 +25,9 @@ export default function NavbarItems({ openMobileNavbar, show = false }) {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M6 18L18 6M6 6l12 12"
             ></path>
           </svg>

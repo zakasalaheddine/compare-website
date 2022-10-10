@@ -30,10 +30,10 @@ export default function Footer({
           <h3 className="font-black text-lg text-bgWhite mb-10">
             {pagesTitle}
           </h3>
-          <div className="flex md:items-center justify-between mr-10 flex-col md:flex-row">
-            {pages.map(({ name, target }, idx) => (
+          <div className="flex md:items-center justify-between ml-10 flex-col md:flex-row">
+            {pages.map(({ label, target }, idx) => (
               <Link href={target} key={`footer__page__${idx}`}>
-                <a className="text-secondary-light font-light">{name}</a>
+                <a className="text-secondary-light font-light">{label}</a>
               </Link>
             ))}
           </div>
@@ -49,7 +49,7 @@ export default function Footer({
                 target="_blank"
                 rel="noreferrer"
                 key={`social__media__${idx}`}
-                className="text-bgWhite border-2 border-bgWhite rounded-full p-2 mr-2"
+                className="text-bgWhite border-2 border-bgWhite rounded-full p-2 ml-2"
               >
                 {getIconForType(type)}
               </a>

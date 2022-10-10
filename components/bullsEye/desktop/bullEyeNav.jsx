@@ -3,7 +3,7 @@ import BullEyeNavItem from './bullEyeNavItem'
 export default function BullEyeNav({ items, onChange, selectedIndex }) {
   return (
     <div className="flex items-center justify-center rounded-sm">
-      {items.map(({ bullsEyeItem_id: { name, icon } }, idx) => (
+      {items.map(({ bullEyeItem_id: { name, icon } }, idx) => (
         <BullEyeNavItem
           icon={icon}
           label={name}

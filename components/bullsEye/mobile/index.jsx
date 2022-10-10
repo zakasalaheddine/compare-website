@@ -11,7 +11,7 @@ export default function MobileBullEye({
     <div className="block md:hidden">
       {items.map(
         (
-          { bullsEyeItem_id: { name, icon, description, title, ctaText } },
+          { bullEyeItem_id: { name, icon, description, title, ctaText } },
           idx
         ) => (
           <MobileBullEyeItem

@@ -8,11 +8,11 @@ export default function DesktopBullEye({
   items
 }) {
   const [activeItem, setActiveItem] = useState(
-    items[activeIndex].bullsEyeItem_id
+    items[activeIndex].bullEyeItem_id
   )
 
   useEffect(() => {
-    setActiveItem(items[activeIndex].bullsEyeItem_id)
+    setActiveItem(items[activeIndex].bullEyeItem_id)
   }, [activeIndex, items])
 
   return (

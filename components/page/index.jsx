@@ -13,26 +13,26 @@ export default function PageComponent({ page }) {
       {sections &&
         sections.map(({ collection, item }, idx) => {
           switch (collection) {
-            case 'bullsEye':
+            case 'bullEye':
               return <BullEye elements={item} key={`bullsEye__${idx}`} />
             case 'headlineDescriptionVideo':
               return (
                 <HeadlineDescriptionVideo
                   headline={item.headline}
                   description={item.description}
-                  video={item.videoUrl}
+                  video={item.videoURL}
                   key={`headlineDescriptionVideo__${idx}`}
                 />
               )
-            case 'quizCallSection':
+            case 'quizCall':
               return (
                 <QuizCallSection
                   ctaText={item.ctaText}
-                  ctaTarget={item.ctaUrl}
+                  ctaTarget={item.ctaTarget}
                   description={item.description}
                   headline={item.headline}
                   image={item.image}
-                  key={`quizCallSection__${idx}`}
+                  key={`quizCall__${idx}`}
                 />
               )
             case 'tools':
@@ -48,9 +48,11 @@ export default function PageComponent({ page }) {
           }
         })}
 
-      <div className="font-normal text-base pb-10 max-w-4xl mx-3 lg:mx-auto">
-        <MarkdownContent content={content} />
-      </div>
+      {content && (
+        <div className="font-normal text-base pb-10 max-w-4xl mx-3 lg:mx-auto">
+          <MarkdownContent content={content} />
+        </div>
+      )}
     </main>
   )
 }

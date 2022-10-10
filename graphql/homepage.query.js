@@ -1,40 +1,39 @@
-import { pageSection } from './fragments/pageSection.fragment'
+import { bullEyeFragment } from './fragments/bullEye'
+import { directusFileFragment } from './fragments/directusFileFragment'
+import { headlineDescriptionVideoFragment } from './fragments/headlineDescriptionVideo'
+import { pageSection } from './fragments/pageSections'
+import { quizCallFragement } from './fragments/quizCall'
+import { toolsFragment } from './fragments/tools'
 
-export const queryHomePage = `
+export const queryCurrentNetwork = `
+${directusFileFragment}
+${bullEyeFragment}
+${headlineDescriptionVideoFragment}
+${quizCallFragement}
+${toolsFragment}
 ${pageSection}
-query networkData {
-	network {
+
+query networkData($networkId: ID!) {
+	network: network_by_id(id: $networkId){
 		name
 		url
-		advertiserDisclosureTitle
-		advertiserDisclosureContent
+		description
 		logo {
-			filename_download
+			...directusFileFragment
 		}
-		pages {
-			id
-			page_id {
-				slug
-				headline
-				sections {
-					...pageSection
-				}
-				content
-			}
+		favicon{
+			...directusFileFragment
 		}
-		homepage {
+		navbarItems: navbarLinks
+		footerItems: footerLinks
+		socialMediaItems: socialMediaLinks
+		homepage{
 			name
 			headline
-			sections {
+			description
+			sections{
 				...pageSection
 			}
-		}
-		footer {
-			id
-			Pages_Title
-			pages
-			Socials_Title
-			socials
 		}
 	}
 }
