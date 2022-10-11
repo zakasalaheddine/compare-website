@@ -1,6 +1,7 @@
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query'
 import PageComponent from 'components/page'
 import Head from 'next/head'
+import { queryNetworkContentPages } from 'requests/GRAPHQL/queryNetworkContentPages'
 import Layout from '../components/layout'
 import { queryNetwork } from '../requests'
 import { getNetworkData } from '../requests/network'
@@ -11,7 +12,6 @@ export default function Home() {
   if (isLoading) return <div>is Loading</div>
 
   const { footerItems, navbarItems, socialMediaItems, homepage } = network
-  console.log({ network })
   return (
     <>
       <Head>

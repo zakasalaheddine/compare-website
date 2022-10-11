@@ -11,6 +11,5 @@ export const queryNetwork = async () => {
   } = await graphQLQuery(queryCurrentNetwork, {
     variables: { networkId }
   })
-  console.log({ network })
   return network
 }
