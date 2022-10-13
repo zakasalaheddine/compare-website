@@ -15,6 +15,18 @@ fragment pageSection on page_sections {
 		... on tools {
 			...tools
 		}
+		... on headlineImage {
+			...headlineImage
+		}
+		... on features {
+			...features
+		}
+		... on descriptionTagCloud {
+			...descriptionTagCloud
+		}
+		... on prosCons {
+			...prosAndCons
+		}
 	}
 }
 `
