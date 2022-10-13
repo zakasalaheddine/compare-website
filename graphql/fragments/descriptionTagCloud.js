@@ -7,5 +7,8 @@ fragment descriptionTagCloud on descriptionTagCloud {
 	headline
 	description
 	tags
+	thumbnail{
+		...directusFileFragment
+	}
 }
 `

@@ -1,3 +1,4 @@
+import DescriptionTagCloud from 'components/descriptionTagCloud'
 import Features from 'components/features'
 import HeadlineImage from 'components/headlineImage'
 import BullEye from '../bullsEye'
@@ -55,6 +56,13 @@ export default function PageComponent({ page }) {
               )
             case 'features':
               return <Features features={item.items} key={`features__${idx}`} />
+            case 'descriptionTagCloud':
+              return (
+                <DescriptionTagCloud
+                  item={item}
+                  key={`descriptionTagCloud__${idx}`}
+                />
+              )
             default:
               break
           }
