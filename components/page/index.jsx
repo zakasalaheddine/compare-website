@@ -1,3 +1,4 @@
+import HeadlineImage from 'components/headlineImage'
 import BullEye from '../bullsEye'
 import MarkdownContent from '../content'
 import Headline from '../headline'
@@ -41,6 +42,14 @@ export default function PageComponent({ page }) {
                   tools={item.tools}
                   headline={item.headline}
                   key={`tools__${idx}`}
+                />
+              )
+            case 'headlineImage':
+              return (
+                <HeadlineImage
+                  headline={item.headline}
+                  image={item.image}
+                  key={`headlineImage__${idx}`}
                 />
               )
             default:
