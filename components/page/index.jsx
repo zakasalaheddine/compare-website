@@ -1,3 +1,4 @@
+import Features from 'components/features'
 import HeadlineImage from 'components/headlineImage'
 import BullEye from '../bullsEye'
 import MarkdownContent from '../content'
@@ -52,6 +53,8 @@ export default function PageComponent({ page }) {
                   key={`headlineImage__${idx}`}
                 />
               )
+            case 'features':
+              return <Features features={item.items} key={`features__${idx}`} />
             default:
               break
           }
