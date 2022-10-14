@@ -19,6 +19,7 @@
     "react-markdown": "^8.0.3"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.4.0",
     "autoprefixer": "^10.4.11",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",

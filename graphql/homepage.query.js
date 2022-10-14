@@ -15,7 +15,6 @@ ${bullEyeFragment}
 ${headlineDescriptionVideoFragment}
 ${quizCallFragement}
 ${toolsFragment}
-${toolsFragment}
 ${headlineImageFragment}
 ${featuresFragment}
 ${descriptionTagCloudFragment}

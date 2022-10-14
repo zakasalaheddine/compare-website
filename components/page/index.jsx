@@ -1,6 +1,7 @@
 import DescriptionTagCloud from 'components/descriptionTagCloud'
 import Features from 'components/features'
 import HeadlineImage from 'components/headlineImage'
+import ProsCons from 'components/prosCons'
 import BullEye from '../bullsEye'
 import MarkdownContent from '../content'
 import Headline from '../headline'
@@ -62,6 +63,10 @@ export default function PageComponent({ page }) {
                   item={item}
                   key={`descriptionTagCloud__${idx}`}
                 />
+              )
+            case 'prosCons':
+              return (
+                <ProsCons item={item} key={`prosCons__${idx}`} />
               )
             default:
               break
