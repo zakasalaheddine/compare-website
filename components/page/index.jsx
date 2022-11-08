@@ -10,10 +10,13 @@ import QuizCallSection from '../quizCall'
 import ToolsSection from '../toolsSection'
 
 export default function PageComponent({ page }) {
-  const { sections, headline, content } = page
+  const { sections, headline, content, compare } = page
   return (
     <main className="bg-white-text">
       <Headline content={headline} />
+      {compare && (
+        <div dangerouslySetInnerHTML={{ __html: compare.section }}></div>
+      )}
       {sections &&
         sections.map(({ collection, item }, idx) => {
           switch (collection) {
@@ -65,9 +68,7 @@ export default function PageComponent({ page }) {
                 />
               )
             case 'prosCons':
-              return (
-                <ProsCons item={item} key={`prosCons__${idx}`} />
-              )
+              return <ProsCons item={item} key={`prosCons__${idx}`} />
             default:
               break
           }

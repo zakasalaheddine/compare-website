@@ -41,6 +41,9 @@ query page($networkId: ID!, $pageType: String, $slug: String) {
 				name
 				headline
 				description
+				compare {
+					section
+				}
 				sections{
 					...pageSection
 				}

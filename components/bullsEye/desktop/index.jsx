@@ -28,6 +28,7 @@ export default function DesktopBullEye({
           description={activeItem.description}
           title={activeItem.title}
           ctaText={activeItem.ctaText}
+          ctaTarget={activeItem.ctaTarget}
           thumbnail={activeItem.thumbnail}
         />
       )}

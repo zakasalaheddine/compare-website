@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Script from 'next/script'
 import MarkdownContent from '../content'
 import Footer from '../footer'
 import Navbar from '../navbar'

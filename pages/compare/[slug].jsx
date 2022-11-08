@@ -3,6 +3,7 @@ import Layout from 'components/layout'
 import PageComponent from 'components/page'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 import { queryNetworkPages } from 'requests/GRAPHQL/queryNetworkContentPages'
 import { queryPage } from 'requests/GRAPHQL/queryPage'
 
@@ -10,7 +11,9 @@ export default function ComparePage() {
   const {
     query: { slug }
   } = useRouter()
-  const { data, isLoading } = useQuery(['page', slug], () => queryPage(slug, 'compare'))
+  const { data, isLoading } = useQuery(['page', slug], () =>
+    queryPage(slug, 'compare')
+  )
   if (isLoading) return <div>is Loading ...</div>
 
   const {
@@ -52,7 +55,9 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { slug } = context.params
   const queryClient = new QueryClient()
-  await queryClient.prefetchQuery(['page', slug], () => queryPage(slug, 'compare'))
+  await queryClient.prefetchQuery(['page', slug], () =>
+    queryPage(slug, 'compare')
+  )
   return {
     // Passed to the page component as props
     props: {

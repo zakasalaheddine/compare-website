@@ -3,6 +3,7 @@ import Layout from 'components/layout'
 import PageComponent from 'components/page'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Script from 'next/script'
 import { queryNetworkPages } from 'requests/GRAPHQL/queryNetworkContentPages'
 import { queryPage } from 'requests/GRAPHQL/queryPage'
 

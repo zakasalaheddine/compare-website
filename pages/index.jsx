@@ -1,6 +1,7 @@
 import { dehydrate, QueryClient, useQuery } from '@tanstack/react-query'
 import PageComponent from 'components/page'
 import Head from 'next/head'
+import Script from 'next/script'
 import { queryNetworkContentPages } from 'requests/GRAPHQL/queryNetworkContentPages'
 import Layout from '../components/layout'
 import { queryNetwork } from '../requests'
