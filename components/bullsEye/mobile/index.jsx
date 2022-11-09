@@ -11,7 +11,7 @@ export default function MobileBullEye({
     <div className="block md:hidden">
       {items.map(
         (
-          { bullEyeItem_id: { name, icon, description, title, ctaText } },
+          { bullEyeItem_id: { name, icon, description, title, ctaText, ctaTarget } },
           idx
         ) => (
           <MobileBullEyeItem
@@ -22,6 +22,7 @@ export default function MobileBullEye({
             description={description}
             title={title}
             ctaText={ctaText}
+            ctaTarget={ctaTarget}
             onClick={() => changeActiveItem(idx)}
           />
         )
