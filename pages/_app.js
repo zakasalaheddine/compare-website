@@ -13,8 +13,10 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     const handleRouteChange = (url, { shallow }) => {
+      console.log('checking', typeof window.runZakaLoader)
       if (window.runZakaLoader) {
         window.runZakaLoader()
+        console.log('loader')
       }
     }
 

@@ -9,7 +9,7 @@ export default function Document() {
           async
           type="module"
           crossOrigin=""
-          strategy="afterInteractive"
+          strategy='beforeInteractive'
           src="https://zakalink-loader.vercel.app/assets/index.js"
           onLoad={() => console.log(`loader script loaded correctly`)}
         />
