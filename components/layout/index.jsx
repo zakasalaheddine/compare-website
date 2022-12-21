@@ -1,9 +1,5 @@
-import Link from 'next/link'
-import Script from 'next/script'
-import MarkdownContent from '../content'
 import Footer from '../footer'
 import Navbar from '../navbar'
-import PageComponent from '../page'
 
 export default function Layout({
   footerItems,
@@ -11,14 +7,13 @@ export default function Layout({
   socials,
   children
 }) {
-  // const { Pages_Title, pages, Socials_Title, socials } = footer
   return (
     <>
       <Navbar items={navbarItems} />
       {children}
       <Footer
-        pagesTitle="روابط"
-        socialTitle="تابعنا"
+        pagesTitle="Links"
+        socialTitle="Follow us"
         pages={footerItems}
         socialMedia={socials}
       />

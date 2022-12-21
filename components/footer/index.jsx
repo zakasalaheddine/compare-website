@@ -30,7 +30,7 @@ export default function Footer({
           <h3 className="font-black text-lg text-bgWhite mb-10">
             {pagesTitle}
           </h3>
-          <div className="flex md:items-center justify-between ml-10 flex-col md:flex-row">
+          <div className="flex md:items-center justify-between mr-10 flex-col md:flex-row">
             {pages.map(({ label, target }, idx) => (
               <Link href={target} key={`footer__page__${idx}`}>
                 <a className="text-secondary-light font-light">{label}</a>
