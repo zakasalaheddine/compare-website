@@ -1,4 +1,6 @@
+import Script from 'next/script'
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 export default function MarkdownContent({ content }) {
   return (
@@ -20,8 +22,19 @@ export default function MarkdownContent({ content }) {
           ),
           ol: ({ children }) => (
             <ol className="py-2 list-decimal px-8">{children}</ol>
-          )
+          ),
+          script: ({ node }) =>
+            typeof window !== 'undefined' ? (
+              <Script
+                src={node.properties.src}
+                type={node.properties.type}
+                allowTransparency={!!node.properties.allowtransparency}
+                allowFullScreen={!!node.properties.allowFullScreen}
+                onLoad={window.parent.scrollTo(0, 0)}
+              />
+            ) : null
         }}
+        rehypePlugins={[rehypeRaw]}
       >
         {content}
       </ReactMarkdown>
