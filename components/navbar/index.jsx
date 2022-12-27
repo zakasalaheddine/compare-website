@@ -3,7 +3,7 @@ import NavbarItems from './items'
 import MobileNavbar from './mobile'
 import { useState } from 'react'
 
-export default function Navbar({ items }) {
+export default function Navbar({ items, navbarLogo }) {
   const [showMobileNavbar, setShowMobileNavbar] = useState(false)
   const toggleMobileNavbar = () => {
     setShowMobileNavbar((prev) => !prev)
@@ -11,7 +11,7 @@ export default function Navbar({ items }) {
   return (
     <div className="bg-secondary">
       <div className="container flex justify-between items-center mx-auto py-2">
-        <NavbarLogo />
+        <NavbarLogo logo={navbarLogo} />
         <NavbarItems
           items={items}
           openMobileNavbar={toggleMobileNavbar}

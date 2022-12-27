@@ -2,7 +2,7 @@ import ReactMarkdown from 'react-markdown'
 
 export default function MarkdownContent({ content }) {
   return (
-    <div className='bg-bgWhite p-4 rounded-lg shadow-lg'>
+    <div className="bg-bgWhite p-4 rounded-lg shadow-lg">
       <ReactMarkdown
         components={{
           p: ({ children }) => <p className="pb-4 text-base">{children}</p>,
@@ -14,6 +14,12 @@ export default function MarkdownContent({ content }) {
           ),
           h4: ({ children }) => (
             <h4 className="pb-8 pt-2 text-xl font-black">{children}</h4>
+          ),
+          ul: ({ children }) => (
+            <ul className="py-2 list-disc px-8">{children}</ul>
+          ),
+          ol: ({ children }) => (
+            <ol className="py-2 list-decimal px-8">{children}</ol>
           )
         }}
       >

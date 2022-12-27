@@ -5,11 +5,12 @@ export default function Layout({
   footerItems,
   navbarItems,
   socials,
-  children
+  children,
+  navbarLogo
 }) {
   return (
     <>
-      <Navbar items={navbarItems} />
+      <Navbar items={navbarItems} navbarLogo={navbarLogo} />
       {children}
       <Footer
         pagesTitle="Links"
